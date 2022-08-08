@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg">
+    <div class="container">
+        <h1>Formulário</h1>
+        <form id="formulario" onsubmit="return valida()" action="index.html" method="post">
+            <label>Nome</label>
+            <input type="text" id="name" placeholder="coloque seu nome">
+            <label>Idade</label>
+            <input type="text" id="idade" placeholder="valido mais que 18 anos">
+            <label>plataforma</label>
+            <select id="plataforma"  required autofocus>
+                <option>PC</option>
+                <option>XBOX</option>
+                <option>PS4-PS5</option>
+            </select>
+            <label>Email</label>
+            <input type="mail" id="email" required/>
+            <label>Genero</label>
+            <input type="radio" name="genero"> <span>masculino</span>
+            <input type="radio" name="genero"> <span>feminino</span>
+            <br>
+            <input type="submit" value="Enviar">
+
+        </form>
+    </div>
+
+    <script>
+        function valida(){
+            let name = document.getElementById('name').value;
+
+            if(name == ""){
+                alert("tem que preencher o name");
+                document.getElementById('name').focus();
+                return false;
+            }
+
+            let idade = document.getElementById('idade').value;
+
+            if(isNaN(idade) || idade < 18 || idade > 100){
+                alert('idade invalida');
+                document.getElementById('idade').focus();
+                return false;
+            }
+
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(email.value.metch(mailformat)){
+                alert("email valido");
+                email.focus();
+            }else{
+                alert('email inavalido')
+                email.focus();
+                return false
+            }
+            
+
+            
+
+            return true
+        }
+    </script>
+</body>
+</html>
