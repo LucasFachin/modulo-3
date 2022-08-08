@@ -51,7 +51,7 @@
             }
 
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if(email.value.metch(mailformat)){
+            if(email.value.match(mailformat)){
                 alert("email valido");
                 email.focus();
             }else{
